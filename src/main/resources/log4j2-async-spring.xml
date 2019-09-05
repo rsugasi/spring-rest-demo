@@ -39,19 +39,25 @@
                 <TimeBasedTriggeringPolicy />
             </Policies>
         </RollingFile>
+        <Async name="ConsoleJSONAsyncAppender">
+            <AppenderRef ref="ConsoleJSONAppender"/>
+        </Async>
+        <Async name="RollingFileAsyncAppender">
+            <AppenderRef ref="RollingFile"/>
+        </Async>
     </Appenders>
 
     <Loggers>
         <!-- LOG everything at INFO level -->
         <Root level="info">
-            <AppenderRef ref="ConsoleJSONAppender" />
-            <AppenderRef ref="RollingFile" />
+            <AppenderRef ref="ConsoleJSONAsyncAppender" />
+            <AppenderRef ref="RollingFileAsyncAppender" />
         </Root>
 
         <!-- LOG "com.example**" at TRACE level -->
         <!-- Logger name="com.example" level="trace"></Logger -->
         <Logger name="CONSOLE_JSON_APPENDER" level="TRACE" additivity="false">
-            <AppenderRef ref="ConsoleJSONAppender" />
+            <AppenderRef ref="ConsoleJSONAsyncAppender" />
         </Logger>
     </Loggers>
 
