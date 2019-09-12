@@ -19,7 +19,7 @@ public class LoggingController {
         // log.info("An INFO Message");
         // log.warn("A WARN Message");
         // log.error("An ERROR Message");
-        ThreadContext.put("ipAddress", "192.168.21.9");
+        ThreadContext.put("transactionId", "192168219");
         Map<String, String> map = new HashMap<>();
         map.put("hello", "world");
         // log.info("{\"hello\": \"world\"}");

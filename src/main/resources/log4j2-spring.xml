@@ -20,8 +20,10 @@
             <!-- To print the whole contextMap object -->
             <!-- JsonLayout complete="false" compact="false" eventEol="false" properties="true" -->
 
-            <JsonLayout complete="false" compact="false" eventEol="false" objectMessageAsJsonObject="true" properties="true">
+            <JsonLayout complete="false" compact="false" eventEol="false"
+                        objectMessageAsJsonObject="true" properties="true">
                 <KeyValuePair key="timestamp" value="$${date:yyyy-MM-dd'T'HH:mm:ss.SSSZ}" />
+                <KeyValuePair key="systemName" value="Loan Demo" />
             </JsonLayout>
         </Console>
         <RollingFile name="RollingFile"
